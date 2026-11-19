@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{BE2A0ED8-BC77-4313-B164-009E952C440C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpeedAutoClicker</RootNamespace>
+    <AssemblyName>SpeedAutoClicker</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>SpeedAutoClicker.ico</ApplicationIcon>
+    <StartupObject>AutoClicker.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Sentry" />
+    <Reference Include="Sentry.Protocol" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-.cs" />
+    <Compile Include="AutoClicker\AC.cs" />
+    <Compile Include="AutoClicker\ACSettingsProvider.cs" />
+    <Compile Include="AutoClicker\ACStats.cs" />
+    <Compile Include="AutoClicker\ActivationMode.cs" />
+    <Compile Include="AutoClicker\DeamonScheduler.cs" />
+    <Compile Include="AutoClicker\GpuInfo.cs" />
+    <Compile Include="AutoClicker\InputLib.cs" />
+    <Compile Include="AutoClicker\KeySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoClicker\KeySelectForm.Designer.cs">
+      <DependentUpon>KeySelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoClicker\Loader.cs" />
+    <Compile Include="AutoClicker\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoClicker\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoClicker\MouseBtns.cs" />
+    <Compile Include="AutoClicker\Program.cs" />
+    <Compile Include="AutoClicker\Properties\Resources.cs" />
+    <Compile Include="AutoClicker\Properties\Settings.cs" />
+    <Compile Include="AutoClicker\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="AutoClicker\SelectAppsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoClicker\SelectAppsForm.Designer.cs">
+      <DependentUpon>SelectAppsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoClicker\Updater.cs" />
+    <Compile Include="AutoClicker\Wizard\ActivationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoClicker\Wizard\ActivationForm.Designer.cs">
+      <DependentUpon>ActivationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoClicker\Wizard\ClickForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoClicker\Wizard\ClickForm.Designer.cs">
+      <DependentUpon>ClickForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoClicker\Wizard\WizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoClicker\Wizard\WizardForm.Designer.cs">
+      <DependentUpon>WizardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoClicker\Wizard\WizardFormTypeConverter.cs" />
+    <Compile Include="AutoClicker\Wizard\WizardFormTypeEditor.cs" />
+    <Compile Include="AutoClicker\Wizard\WizardResult.cs" />
+    <Compile Include="Costura\AssemblyLoader.cs" />
+    <Compile Include="FabiShared\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FabiShared\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FabiShared\Checksum.cs" />
+    <Compile Include="FabiShared\FabiProgram.cs" />
+    <Compile Include="FabiShared\IPersistFile.cs" />
+    <Compile Include="FabiShared\IShellLinkA.cs" />
+    <Compile Include="FabiShared\IShellLinkW.cs" />
+    <Compile Include="FabiShared\Misc.cs" />
+    <Compile Include="FabiShared\SettingsLib.cs" />
+    <Compile Include="FabiShared\ShellLink.cs" />
+    <Compile Include="FabiShared\ShellShortcut.cs" />
+    <Compile Include="FabiShared\SLGP_FLAGS.cs" />
+    <Compile Include="FabiShared\SLR_FLAGS.cs" />
+    <Compile Include="FabiShared\WIN32_FIND_DATAA.cs" />
+    <Compile Include="FabiShared\WIN32_FIND_DATAW.cs" />
+    <Compile Include="ProcessedByFody.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AutoClicker\KeySelectForm.resources" />
+    <EmbeddedResource Include="AutoClicker\MainForm.resources" />
+    <EmbeddedResource Include="AutoClicker\Properties\Resources.resources" />
+    <EmbeddedResource Include="AutoClicker\SelectAppsForm.resources" />
+    <EmbeddedResource Include="AutoClicker\Wizard\ActivationForm.resources" />
+    <EmbeddedResource Include="AutoClicker\Wizard\WizardForm.resources" />
+    <EmbeddedResource Include="Costura\costura\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\win32\primitives\dll.compressed" />
+    <EmbeddedResource Include="Costura\netstandard\dll.compressed" />
+    <EmbeddedResource Include="Costura\newtonsoft\json\dll.compressed" />
+    <EmbeddedResource Include="Costura\sentry\dll.compressed" />
+    <EmbeddedResource Include="Costura\sentry\pdb.compressed" />
+    <EmbeddedResource Include="Costura\sentry\platformabstractions\dll.compressed" />
+    <EmbeddedResource Include="Costura\sentry\protocol\dll.compressed" />
+    <EmbeddedResource Include="Costura\sentry\protocol\pdb.compressed" />
+    <EmbeddedResource Include="Costura\system\appcontext\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\collections\concurrent\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\collections\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\collections\immutable\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\collections\nongeneric\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\collections\specialized\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\componentmodel\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\componentmodel\eventbasedasync\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\componentmodel\primitives\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\componentmodel\typeconverter\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\console\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\data\common\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\diagnostics\contracts\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\diagnostics\debug\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\diagnostics\fileversioninfo\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\diagnostics\process\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\diagnostics\stacktrace\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\diagnostics\textwritertracelistener\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\diagnostics\tools\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\diagnostics\tracesource\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\diagnostics\tracing\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\drawing\primitives\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\dynamic\runtime\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\globalization\calendars\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\globalization\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\globalization\extensions\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\io\compression\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\io\compression\zipfile\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\io\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\io\filesystem\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\io\filesystem\driveinfo\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\io\filesystem\primitives\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\io\filesystem\watcher\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\io\isolatedstorage\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\io\memorymappedfiles\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\io\pipes\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\io\unmanagedmemorystream\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\linq\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\linq\expressions\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\linq\parallel\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\linq\queryable\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\net\http\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\net\nameresolution\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\net\networkinformation\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\net\ping\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\net\primitives\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\net\requests\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\net\security\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\net\sockets\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\net\webheadercollection\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\net\websockets\client\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\net\websockets\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\objectmodel\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\reflection\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\reflection\extensions\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\reflection\primitives\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\resources\reader\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\resources\resourcemanager\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\resources\writer\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\runtime\compilerservices\visualc\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\runtime\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\runtime\extensions\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\runtime\handles\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\runtime\interopservices\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\runtime\interopservices\runtimeinformation\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\runtime\numerics\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\runtime\serialization\formatters\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\runtime\serialization\json\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\runtime\serialization\primitives\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\runtime\serialization\xml\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\security\claims\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\security\cryptography\algorithms\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\security\cryptography\csp\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\security\cryptography\encoding\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\security\cryptography\primitives\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\security\cryptography\x509certificates\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\security\principal\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\security\securestring\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\text\encoding\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\text\encoding\extensions\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\text\regularexpressions\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\threading\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\threading\overlapped\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\threading\tasks\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\threading\tasks\parallel\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\threading\threadpool\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\threading\thread\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\threading\timer\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\valuetuple\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\xml\readerwriter\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\xml\xdocument\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\xml\xmldocument\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\xml\xmlserializer\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\xml\xpath\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\xml\xpath\xdocument\dll.compressed" />
+    <EmbeddedResource Include="FabiShared\AboutForm.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="AutoClicker\Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
